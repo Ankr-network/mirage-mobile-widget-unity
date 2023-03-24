@@ -1,15 +1,19 @@
 package com.mirage.miragewebviewandroidplugin;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.webkit.WebView;
 import android.widget.ImageButton;
 import android.widget.ProgressBar;
+
 import com.unity3d.player.UnityPlayer;
 
-public class MirageWebViewActivity extends AppCompatActivity {
+import org.json.JSONObject;
+
+import java.util.HashMap;
+
+public class MirageWebViewActivity extends Activity {
     private WebView _webView;
     private ImageButton _exitButton;
     private ProgressBar _progressBar;
@@ -44,6 +48,11 @@ public class MirageWebViewActivity extends AppCompatActivity {
     }
 
     public void sendLoginDataToUnity(String loginData) {
-        UnityPlayer.UnitySendMessage("AndroidWebViewManager", "OnLoginDataReceived", loginData);
+
+        HashMap<String, String> messageMap = new HashMap<>();
+        messageMap.put("message_type", "login");
+        messageMap.put("message_data", loginData);
+        JSONObject messageMapJson = new JSONObject(messageMap);
+        UnityPlayer.UnitySendMessage("MirageMessageBus", "PushMessage", messageMapJson.toString());
     }
 }
