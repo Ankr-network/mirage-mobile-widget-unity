@@ -5,10 +5,10 @@ import android.content.Intent;
 
 public class UnityBridge {
     private static UnityBridge instance;
-    private Context context;
+    private Context _context;
 
     public UnityBridge(Context context) {
-        this.context = context;
+        _context = context;
     }
 
     public static UnityBridge getInstance(Context context) {
@@ -19,9 +19,9 @@ public class UnityBridge {
     }
 
     public void showWebView(String url) {
-        Intent intent = new Intent(context, MirageWebViewActivity.class);
+        Intent intent = new Intent(_context, MirageWebViewActivity.class);
         intent.putExtra("url", url);
-        context.startActivity(intent);
+        _context.startActivity(intent);
     }
 
     // Implement other methods to pass data between WebView and Unity as needed.

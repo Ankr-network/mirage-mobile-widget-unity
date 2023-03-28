@@ -3,6 +3,7 @@ package com.mirage.miragewebviewandroidplugin;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.webkit.WebView;
 import android.widget.ImageButton;
 import android.widget.ProgressBar;
@@ -17,6 +18,23 @@ public class MirageWebViewActivity extends Activity {
     private WebView _webView;
     private ImageButton _exitButton;
     private ProgressBar _progressBar;
+
+    @Override
+    public void onBackPressed() {
+        if(_webView.canGoBack()) {
+            _webView.goBack();
+        } else {
+            exitActivity();
+        }
+    }
+
+    public void sendLoginDataToUnity(String loginData) {
+        HashMap<String, String> messageMap = new HashMap<>();
+        messageMap.put("message_type", "login");
+        messageMap.put("message_data", loginData);
+        JSONObject messageMapJson = new JSONObject(messageMap);
+        UnityPlayer.UnitySendMessage("MirageMessageBus", "PushMessage", messageMapJson.toString());
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,24 +53,10 @@ public class MirageWebViewActivity extends Activity {
         String url = intent.getStringExtra("url");
         _webView.loadUrl(url);
 
-        _exitButton.setOnClickListener(v -> finish());
+        _exitButton.setOnClickListener(v -> exitActivity());
     }
 
-    @Override
-    public void onBackPressed() {
-        if(_webView.canGoBack()) {
-            _webView.goBack();
-        } else {
-            finish();
-        }
-    }
-
-    public void sendLoginDataToUnity(String loginData) {
-
-        HashMap<String, String> messageMap = new HashMap<>();
-        messageMap.put("message_type", "login");
-        messageMap.put("message_data", loginData);
-        JSONObject messageMapJson = new JSONObject(messageMap);
-        UnityPlayer.UnitySendMessage("MirageMessageBus", "PushMessage", messageMapJson.toString());
+    private void exitActivity() {
+        finish();
     }
 }
