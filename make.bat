@@ -1,3 +1,3 @@
 set /p android_studio_path=<LocalAndroidStudioPath.txt
-python copy_aar.py %android_studio_path%
+python build_and_copy_aar.py %android_studio_path%
 pause
