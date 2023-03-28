@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -10,7 +9,10 @@
         android:id="@+id/webview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="8dp" />
+        android:layout_marginTop="@dimen/webview_margin_top_bottom"
+        android:layout_marginBottom="@dimen/webview_margin_top_bottom"
+        android:layout_marginStart="@dimen/webview_margin_left_right"
+        android:layout_marginEnd="@dimen/webview_margin_left_right" />
 
     <ImageButton
         android:id="@+id/exit_button"
@@ -19,8 +21,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentTop="true"
-        android:layout_margin="8dp"
-        android:padding="12dp"
+        android:layout_margin="@dimen/close_button_margin"
+        android:padding="@dimen/close_button_padding"
         android:background="@android:color/transparent"
         android:src="@android:drawable/ic_menu_close_clear_cancel" />
 

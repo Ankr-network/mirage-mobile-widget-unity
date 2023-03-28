@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="webview_margin_top_bottom">40dp</dimen>
+    <dimen name="webview_margin_left_right">20dp</dimen>
+    <dimen name="close_button_margin">8dp</dimen>
+    <dimen name="close_button_padding">12dp</dimen>
+</resources>
