@@ -1,6 +1,7 @@
 package com.mirage.miragewebviewandroidplugin;
 
 import android.graphics.Bitmap;
+import android.graphics.Color;
 import android.view.View;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
@@ -21,6 +22,8 @@ public class CustomWebViewClient extends WebViewClient {
 
     @Override
     public void onPageFinished(WebView view, String url) {
+
+        view.setBackgroundColor(Color.TRANSPARENT);
         _progressBar.setVisibility(View.GONE);
 
 

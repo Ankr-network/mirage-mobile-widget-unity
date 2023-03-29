@@ -2,29 +2,23 @@ import os
 import shutil
 import subprocess
 import sys
+from load_settings import load_settings
 
-def build_project(android_studio_path):
+def build_project(android_project_path):
     if os.name == 'nt':
         gradle_executable = "gradlew.bat"
     else:
         gradle_executable = "./gradlew"
     
-    os.chdir("Mirage-Android-WebView-Plugin")
+    os.chdir(android_project_path)
     subprocess.run([gradle_executable, "clean"])
     subprocess.run([gradle_executable, "assembleRelease"])
     os.chdir("..")
-
-if __name__ == "__main__":
-    if len(sys.argv) < 2:
-        print("Please provide the path to the Android Studio installation folder.")
-        sys.exit(1)
-
-    android_studio_path = sys.argv[1]
-    build_project(android_studio_path)
-
+    
+def copy_aar(android_project_path, unity_project_path):
     # Define source and destination folders
-    source_folder = os.path.join("Mirage-Android-WebView-Plugin", "app", "build", "outputs", "aar")
-    destination_folder = os.path.join("Mirage-Widget", "Assets", "MirageWidget", "Plugins", "MirageWebViewPlugin", "Android")
+    source_folder = os.path.join(android_project_path, "app", "build", "outputs", "aar")
+    destination_folder = os.path.join(unity_project_path, "Assets", "MirageWidget", "Plugins", "MirageWebViewPlugin", "Android")
     
     # Check if the source folder exists
     if os.path.exists(source_folder):
@@ -47,3 +41,11 @@ if __name__ == "__main__":
             print(f"built plugin file {file_name} not found in {source_folder}")
     else:
         print(f"Source folder {source_folder} does not exist.")
+
+if __name__ == "__main__":
+    settings = load_settings()
+    android_project_path = settings['AndroidProjectPath']
+    unity_project_path = settings['UnityProjectPath']
+
+    build_project(android_project_path)
+    copy_aar(android_project_path, unity_project_path)

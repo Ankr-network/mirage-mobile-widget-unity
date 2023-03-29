@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/webViewLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@android:color/transparent"
     tools:context=".MirageWebViewActivity">
 
     <WebView
         android:id="@+id/webview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@android:color/transparent"
+        android:scrollbars="none"
         android:layout_marginTop="@dimen/webview_margin_top_bottom"
         android:layout_marginBottom="@dimen/webview_margin_top_bottom"
         android:layout_marginStart="@dimen/webview_margin_left_right"
@@ -32,5 +36,6 @@
         android:layout_width="match_parent"
         android:layout_height="4dp"
         android:layout_alignParentTop="true"
+        android:background="@android:color/transparent"
         android:indeterminate="false" />
 </RelativeLayout>

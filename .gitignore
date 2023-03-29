@@ -1,5 +1,6 @@
-LocalAndroidStudioPath.txt
-
+LocalBuildSettings.txt
+[Bb]uild/
+*/__pycache__/
 
 # Default ignored files
 Mirage-Android-WebView-Plugin/shelf/
