@@ -22,7 +22,6 @@ public class CustomWebViewClient extends WebViewClient {
 
     @Override
     public void onPageFinished(WebView view, String url) {
-
         _progressBar.setVisibility(View.GONE);
 
 

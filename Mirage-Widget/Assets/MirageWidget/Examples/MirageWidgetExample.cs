@@ -18,5 +18,13 @@ namespace MirageWidget.Examples
 			_messageBus.AddListener(_mirageWebViewManager);
 			_mirageWebViewManager.ShowWebView("https://google.com");
 		}
+		
+		private void OnApplicationPause(bool pauseStatus)
+		{
+			if (pauseStatus)
+			{
+				Application.targetFrameRate = 30;
+			}
+		}
 	}
 }

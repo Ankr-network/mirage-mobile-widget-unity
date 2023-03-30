@@ -3,7 +3,10 @@ package com.mirage.miragewebviewandroidplugin;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.view.View;
+import android.view.WindowManager;
 import android.webkit.WebView;
 import android.widget.ImageButton;
 import android.widget.ProgressBar;
@@ -42,6 +45,13 @@ public class MirageWebViewActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+//        getWindow().setFlags(
+//                WindowManager.LayoutParams.FLAG_HARDWARE_ACCELERATED,
+//                WindowManager.LayoutParams.FLAG_HARDWARE_ACCELERATED
+//        );
+
         setContentView(R.layout.activity_web_view);
 
         _webView = findViewById(R.id.webview);
@@ -57,9 +67,7 @@ public class MirageWebViewActivity extends Activity {
         String url = intent.getStringExtra("url");
         _webView.loadUrl(url);
         _relativeLayout.setBackgroundColor(Color.TRANSPARENT);
-        // _webView.setBackgroundColor(Color.TRANSPARENT);
-        //_relativeLayout.setBackgroundColor(Color.TRANSPARENT);
-        //_webView.setLayerType(View.LAYER_TYPE_SOFTWARE, null);
+        _relativeLayout.setLayerType(View.LAYER_TYPE_SOFTWARE, null);
 
         _exitButton.setOnClickListener(v -> exitActivity());
     }
