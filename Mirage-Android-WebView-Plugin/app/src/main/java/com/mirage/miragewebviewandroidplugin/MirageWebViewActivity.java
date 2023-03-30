@@ -57,7 +57,7 @@ public class MirageWebViewActivity extends Activity {
         String url = intent.getStringExtra("url");
         _webView.loadUrl(url);
         _relativeLayout.setBackgroundColor(Color.TRANSPARENT);
-        //_webView.setBackgroundColor(Color.TRANSPARENT);
+        // _webView.setBackgroundColor(Color.TRANSPARENT);
         //_relativeLayout.setBackgroundColor(Color.TRANSPARENT);
         //_webView.setLayerType(View.LAYER_TYPE_SOFTWARE, null);
 

@@ -44,8 +44,8 @@ def copy_aar(android_project_path, unity_project_path):
 
 if __name__ == "__main__":
     settings = load_settings()
-    android_project_path = settings['AndroidProjectPath']
-    unity_project_path = settings['UnityProjectPath']
+    android_project_path = os.path.abspath(settings['AndroidProjectPath'])
+    unity_project_path = os.path.abspath(settings['UnityProjectPath'])
 
     build_project(android_project_path)
     copy_aar(android_project_path, unity_project_path)
