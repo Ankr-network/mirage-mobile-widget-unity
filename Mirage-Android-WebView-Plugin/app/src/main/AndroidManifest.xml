@@ -1,14 +1,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.mirage.miragewebviewandroidplugin">
+    package="com.mirage.webviewplugin">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application>
         <activity
-            android:name=".MirageWebViewActivity"
-            android:theme="@android:style/Theme"
-            android:exported="true">
+            android:name=".MirageWebViewActivity">
         </activity>
     </application>
 

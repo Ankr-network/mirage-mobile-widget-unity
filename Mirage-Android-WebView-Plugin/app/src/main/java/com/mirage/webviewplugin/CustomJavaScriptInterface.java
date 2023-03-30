@@ -1,4 +1,4 @@
-package com.mirage.miragewebviewandroidplugin;
+package com.mirage.webviewplugin;
 
 import android.webkit.JavascriptInterface;
 

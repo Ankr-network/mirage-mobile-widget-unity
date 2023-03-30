@@ -1,11 +1,10 @@
-package com.mirage.miragewebviewandroidplugin;
+package com.mirage.webviewplugin;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.webkit.WebView;
@@ -21,6 +20,7 @@ import java.util.HashMap;
 
 public class MirageWebViewActivity extends Activity {
 
+    private UnityPlayer _unityPlayer;
     private RelativeLayout _relativeLayout;
     private WebView _webView;
     private ImageButton _exitButton;
@@ -34,6 +34,25 @@ public class MirageWebViewActivity extends Activity {
             exitActivity();
         }
     }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        if(_unityPlayer != null)
+        {
+            _unityPlayer.pause();
+        }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if(_unityPlayer != null)
+        {
+            _unityPlayer.resume();
+        }
+    }
+
 
     public void sendLoginDataToUnity(String loginData) {
         HashMap<String, String> messageMap = new HashMap<>();

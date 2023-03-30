@@ -1,36 +1,6 @@
-buildscript {
-
-    repositories {
-        mavenCentral()
-        google()
-        maven { url 'https://repo.spring.io/release' }
-        maven { url 'https://jitpack.io' }
-        jcenter()
-        maven {
-            url 'https://mvnrepository.com/artifact/com.android.tools.lint/lint-gradle-api'
-        }
-    }
-
-    dependencies {
-        classpath 'com.android.tools.build:gradle:4.0.+'
-    }
-}
 
 plugins {
     id 'com.android.library'
-}
-
-allprojects {
-    repositories {
-        mavenCentral()
-        google()
-        maven { url 'https://repo.spring.io/release' }
-        maven { url 'https://jitpack.io' }
-        jcenter()
-        maven {
-            url 'https://mvnrepository.com/artifact/com.android.tools.lint/lint-gradle-api'
-        }
-    }
 }
 
 android {

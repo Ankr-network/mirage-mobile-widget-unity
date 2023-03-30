@@ -6,7 +6,7 @@ namespace MirageWidget.MirageWebView.Android
 	public class MirageAndroidWebViewManager : IMirageWebViewPlatformManager
 	{
 		private const string UnityPlayerClass = "com.unity3d.player.UnityPlayer";
-		private const string UnityBridgeClass = "com.mirage.miragewebviewandroidplugin.UnityBridge";
+		private const string UnityBridgeClass = "com.mirage.webviewplugin.UnityBridge";
 		private const string CurrentActivityField = "currentActivity";
 		
 		void IMirageWebViewPlatformManager.ShowWebView(string url)
