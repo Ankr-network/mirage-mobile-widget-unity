@@ -11,7 +11,6 @@
         android:id="@+id/webview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@android:color/transparent"
         android:scrollbars="none"
         android:layout_marginTop="@dimen/webview_margin_top_bottom"
         android:layout_marginBottom="@dimen/webview_margin_top_bottom"
@@ -36,6 +35,5 @@
         android:layout_width="match_parent"
         android:layout_height="4dp"
         android:layout_alignParentTop="true"
-        android:background="@android:color/transparent"
         android:indeterminate="false" />
 </RelativeLayout>

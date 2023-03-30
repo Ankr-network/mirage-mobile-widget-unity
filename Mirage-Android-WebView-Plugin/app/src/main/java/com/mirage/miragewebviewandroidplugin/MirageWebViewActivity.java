@@ -47,17 +47,17 @@ public class MirageWebViewActivity extends Activity {
         _webView = findViewById(R.id.webview);
         _exitButton = findViewById(R.id.exit_button);
         _progressBar = findViewById(R.id.progress_bar);
-        _relativeLayout = (RelativeLayout) findViewById(R.id.webViewLayout);
+        _relativeLayout = findViewById(R.id.webViewLayout);
 
         _webView.setWebViewClient(new CustomWebViewClient(_progressBar));
         _webView.getSettings().setJavaScriptEnabled(true);
         _webView.addJavascriptInterface(new CustomJavaScriptInterface(this), "AndroidInterface");
 
-
         Intent intent = getIntent();
         String url = intent.getStringExtra("url");
         _webView.loadUrl(url);
-        _webView.setBackgroundColor(Color.TRANSPARENT);
+        _relativeLayout.setBackgroundColor(Color.TRANSPARENT);
+        //_webView.setBackgroundColor(Color.TRANSPARENT);
         //_relativeLayout.setBackgroundColor(Color.TRANSPARENT);
         //_webView.setLayerType(View.LAYER_TYPE_SOFTWARE, null);
 

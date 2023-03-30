@@ -23,7 +23,6 @@ public class CustomWebViewClient extends WebViewClient {
     @Override
     public void onPageFinished(WebView view, String url) {
 
-        view.setBackgroundColor(Color.TRANSPARENT);
         _progressBar.setVisibility(View.GONE);
 
 
