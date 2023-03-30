@@ -47,7 +47,10 @@ public class MirageWebViewActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
         Window window = getWindow();
+        window.addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+        window.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         window.setDimAmount(0); //Making the window dim transparent
         window.addFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND);
 
@@ -72,7 +75,7 @@ public class MirageWebViewActivity extends Activity {
         String url = intent.getStringExtra("url");
         _webView.loadUrl(url);
         _relativeLayout.setBackgroundColor(Color.TRANSPARENT);
-        _relativeLayout.setLayerType(View.LAYER_TYPE_SOFTWARE, null);
+//        _relativeLayout.setLayerType(View.LAYER_TYPE_SOFTWARE, null);
 
         _exitButton.setOnClickListener(v -> exitActivity());
     }
