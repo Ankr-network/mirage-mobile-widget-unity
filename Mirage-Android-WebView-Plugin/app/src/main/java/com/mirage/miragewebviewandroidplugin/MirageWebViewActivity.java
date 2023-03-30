@@ -46,7 +46,11 @@ public class MirageWebViewActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        Window window = getWindow();
+        window.setDimAmount(0); //Making the window dim transparent
+        window.addFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND);
+
+// this could be needed later, not sure yet
 //        getWindow().setFlags(
 //                WindowManager.LayoutParams.FLAG_HARDWARE_ACCELERATED,
 //                WindowManager.LayoutParams.FLAG_HARDWARE_ACCELERATED
