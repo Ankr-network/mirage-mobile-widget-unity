@@ -1,9 +1,21 @@
 ﻿import os
+import platform
+import stat
 import json
 import subprocess
 import sys
 from datetime import datetime
 from load_settings import load_settings
+
+def is_windows():
+    return platform.system() == 'Windows'
+
+def give_build_permissions(unity_path):
+    if not is_windows():
+        print(f"Extending permissions for {unity_path} ...")
+        current_permissions = os.stat(unity_path).st_mode
+        new_permissions = current_permissions | stat.S_IXUSR | stat.S_IXGRP | stat.S_IXOTH
+        os.chmod(unity_path, new_permissions)
 
 def build_android_project(unity_path, project_path, output_path, keystore_path, keystore_password, alias, alias_password):
     cmd = [
@@ -78,7 +90,7 @@ if __name__ == "__main__":
 
     unity_path = settings["UnityPath"]
     project_path = os.path.abspath(settings["UnityProjectPath"])
-    build_path = os.path.join(os.path.abspath("..\\"), "Build\\")
+    build_path = os.path.join(os.path.abspath("..\\"), "Build\\") if is_windows() else os.path.join(os.path.abspath("../"), "Build/")
     apk_filename = os.path.basename(project_path) + "_" + datetime.now().strftime("%Y-%m-%d_%H-%M-%S") + ".apk"
     apk_path = os.path.join(build_path, apk_filename)
     keystore_path = settings["KeystorePath"]
@@ -89,6 +101,7 @@ if __name__ == "__main__":
     package_name = settings["PackageName"]
     delete_previous_build = settings["DeletePreviousBuild"]
 
+    give_build_permissions(unity_path)
     print(f"Building {apk_path} from {project_path} ...")
     build_android_project(unity_path, project_path, apk_path, keystore_path, keystore_password, alias, alias_password)
     
