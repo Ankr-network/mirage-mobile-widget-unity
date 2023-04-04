@@ -1,1 +1,1 @@
-python3 copy_aar.py
+python3 build_and_copy_aar.py

@@ -20,7 +20,7 @@
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
 
--keep class com.mirage.webviewplugin.UnityBridge {*;}
--keep class com.mirage.webviewplugin.CustomJavaScriptInterface {*;}
--keep class com.mirage.webviewplugin.MirageWebViewActivity {*;}
--keep class com.mirage.webviewplugin.CustomWebViewClient {*;}
+-keep class com.mirage.webview.UnityBridge {*;}
+-keep class com.mirage.webview.CustomJavaScriptInterface {*;}
+-keep class com.mirage.webview.MirageWebViewActivity {*;}
+-keep class com.mirage.webview.CustomWebViewClient {*;}

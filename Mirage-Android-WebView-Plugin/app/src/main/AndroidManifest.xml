@@ -1,12 +1,13 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.mirage.webviewplugin">
+    package="com.mirage.webview">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application>
         <activity
-            android:name=".MirageWebViewActivity">
+            android:name=".MirageWebViewActivity"
+            android:theme="@style/TransparentTheme">
         </activity>
     </application>
 

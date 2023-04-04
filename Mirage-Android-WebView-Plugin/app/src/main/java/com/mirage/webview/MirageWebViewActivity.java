@@ -1,6 +1,6 @@
-package com.mirage.webviewplugin;
+package com.mirage.webview;
 
-import android.app.Activity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -18,9 +18,8 @@ import org.json.JSONObject;
 
 import java.util.HashMap;
 
-public class MirageWebViewActivity extends Activity {
+public class MirageWebViewActivity extends AppCompatActivity {
 
-    private UnityPlayer _unityPlayer;
     private RelativeLayout _relativeLayout;
     private WebView _webView;
     private ImageButton _exitButton;
@@ -34,25 +33,6 @@ public class MirageWebViewActivity extends Activity {
             exitActivity();
         }
     }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        if(_unityPlayer != null)
-        {
-            _unityPlayer.pause();
-        }
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        if(_unityPlayer != null)
-        {
-            _unityPlayer.resume();
-        }
-    }
-
 
     public void sendLoginDataToUnity(String loginData) {
         HashMap<String, String> messageMap = new HashMap<>();
@@ -79,7 +59,7 @@ public class MirageWebViewActivity extends Activity {
 //                WindowManager.LayoutParams.FLAG_HARDWARE_ACCELERATED
 //        );
 
-        setContentView(R.layout.activity_web_view);
+        setContentView(R.layout.activity_main);
 
         _webView = findViewById(R.id.webview);
         _exitButton = findViewById(R.id.exit_button);
