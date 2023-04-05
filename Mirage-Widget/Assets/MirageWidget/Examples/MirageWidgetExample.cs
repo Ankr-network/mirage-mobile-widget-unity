@@ -16,7 +16,11 @@ namespace MirageWidget.Examples
 			Debug.Log("MirageWidgetExample:: start");
 			_mirageWebViewManager = new MirageWebViewManager();
 			_messageBus.AddListener(_mirageWebViewManager);
-			_mirageWebViewManager.ShowWebView("https://google.com");
+			
+			//TODO ANTON finish this
+			var clientId = "";
+			var userToken = "";
+			_mirageWebViewManager.ShowWebView(clientId, userToken);
 		}
 	}
 }

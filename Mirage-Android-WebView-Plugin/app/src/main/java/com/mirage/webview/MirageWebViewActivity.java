@@ -65,7 +65,7 @@ public class MirageWebViewActivity extends Activity {
         _webView.addJavascriptInterface(new CustomJavaScriptInterface(this), "WebViewInterface");
 
         Intent intent = getIntent();
-        String url = intent.getStringExtra("url");
+        String url = getString(R.string.mirage_login_url);
         _webView.loadUrl(url);
         _relativeLayout.setBackgroundColor(Color.TRANSPARENT);
 

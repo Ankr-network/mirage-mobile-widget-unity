@@ -2,7 +2,7 @@
 {
 	public interface IMirageWebViewPlatformManager
 	{
-		void ShowWebView(string url);
+		void ShowWebView(string clientId, string userToken);
 		void PushMessage(string message);
 	}
 }

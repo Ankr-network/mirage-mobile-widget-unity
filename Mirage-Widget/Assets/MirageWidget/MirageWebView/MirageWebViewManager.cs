@@ -13,9 +13,9 @@ namespace MirageWidget.MirageWebView
 		private readonly IMirageWebViewPlatformManager _platformManager = new MiragePlatformManagerStub();
 		#endif
 		
-		public void ShowWebView(string url)
+		public void ShowWebView(string clientId, string userToken)
 		{
-			_platformManager.ShowWebView(url);
+			_platformManager.ShowWebView(clientId, userToken);
 		}
 
 		void IMessageListener.PushMessage(string message)
