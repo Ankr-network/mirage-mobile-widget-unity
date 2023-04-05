@@ -4,9 +4,9 @@
 
 To run automated builds you will need:
 
-- Python 3.0 . You can download it from the [official Python website](https://www.python.org/downloads/). 
+- Python 3.0 . You can download it from the [official Python website](https://www.python.org/downloads/)
 - JDK 1.8.0 . You can download it from the Oracle website or from [this GitHub page](https://gist.github.com/wavezhang/ba8425f24a968ec9b2a8619d7c2d86a6)
-- Android SDK. You can download and install it together with Unity Editor or latest version of Android Studio.
+- Android SDK. You can download and install it together with Unity Editor or latest version of Android Studio
 
 ## Configuration
 
