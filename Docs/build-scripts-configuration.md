@@ -10,7 +10,7 @@ To run automated builds you will need:
 
 ## Configuration
 
-In order to configure your local paths to do automated Mirage Widget Android library and Unity example builds you will need to create LocalBuildSettings.txt in the repo's BuildScripts folder. To this easily you can make a copy of LocalBuildSettings-template.txt, rename it to LocalBuildSettings.txt and fill its JSON-object property values with your local values. LocalBuildSettings.txt is ignored by git.
+To configure your local paths to do the automated Mirage Widget Android library and Unity example builds you need to create LocalBuildSettings.txt in the repo's BuildScripts folder. To do this easily you can make a copy of LocalBuildSettings-template.txt, rename it to LocalBuildSettings.txt and fill its JSON-object property values with your local values. LocalBuildSettings.txt is ignored by git.
 
 Here's a description of each property in this config:
 
