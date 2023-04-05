@@ -1,6 +1,6 @@
 package com.mirage.webview;
 
-import androidx.appcompat.app.AppCompatActivity;
+import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -18,7 +18,7 @@ import org.json.JSONObject;
 
 import java.util.HashMap;
 
-public class MirageWebViewActivity extends AppCompatActivity {
+public class MirageWebViewActivity extends Activity {
 
     private RelativeLayout _relativeLayout;
     private WebView _webView;
@@ -53,12 +53,6 @@ public class MirageWebViewActivity extends AppCompatActivity {
         window.setDimAmount(0); //Making the window dim transparent
         window.addFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND);
 
-// this could be needed later, not sure yet
-//        getWindow().setFlags(
-//                WindowManager.LayoutParams.FLAG_HARDWARE_ACCELERATED,
-//                WindowManager.LayoutParams.FLAG_HARDWARE_ACCELERATED
-//        );
-
         setContentView(R.layout.activity_main);
 
         _webView = findViewById(R.id.webview);
@@ -68,13 +62,12 @@ public class MirageWebViewActivity extends AppCompatActivity {
 
         _webView.setWebViewClient(new CustomWebViewClient(_progressBar));
         _webView.getSettings().setJavaScriptEnabled(true);
-        _webView.addJavascriptInterface(new CustomJavaScriptInterface(this), "AndroidInterface");
+        _webView.addJavascriptInterface(new CustomJavaScriptInterface(this), "WebViewInterface");
 
         Intent intent = getIntent();
         String url = intent.getStringExtra("url");
         _webView.loadUrl(url);
         _relativeLayout.setBackgroundColor(Color.TRANSPARENT);
-//        _relativeLayout.setLayerType(View.LAYER_TYPE_SOFTWARE, null);
 
         _exitButton.setOnClickListener(v -> exitActivity());
     }

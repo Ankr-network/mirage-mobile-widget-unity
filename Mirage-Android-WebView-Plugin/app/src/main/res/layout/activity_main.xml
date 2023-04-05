@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/webViewLayout"
     android:layout_width="match_parent"
@@ -10,7 +9,6 @@
 
     <WebView
         android:id="@+id/webview"
-        android:background="@android:color/transparent"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scrollbars="none"
@@ -26,7 +24,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentTop="true"
-        android:layout_margin="@dimen/close_button_margin"
+        android:layout_marginTop="@dimen/close_button_margin_top"
+        android:layout_marginRight="@dimen/close_button_margin_right"
         android:padding="@dimen/close_button_padding"
         android:background="@android:color/transparent"
         android:src="@android:drawable/ic_menu_close_clear_cancel" />
@@ -39,4 +38,4 @@
         android:layout_alignParentTop="true"
         android:indeterminate="false" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

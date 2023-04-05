@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/MirageWidget/Examples/Scenes/MirageWidgetExample.unity
+    guid: 61c09156fb36b2f458ad1c5c4568cfcf
   m_configObjects: {}

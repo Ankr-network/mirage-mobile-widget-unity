@@ -2,6 +2,7 @@
 <resources>
     <dimen name="webview_margin_top_bottom">40dp</dimen>
     <dimen name="webview_margin_left_right">20dp</dimen>
-    <dimen name="close_button_margin">8dp</dimen>
+    <dimen name="close_button_margin_top">30dp</dimen>
+    <dimen name="close_button_margin_right">10dp</dimen>
     <dimen name="close_button_padding">12dp</dimen>
 </resources>
