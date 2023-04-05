@@ -1,21 +1,13 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.mirage.miragewebviewandroidplugin">
+    package="com.mirage.webview">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application>
-
-        <!-- No application tag should be present in the library's manifest -->
-
         <activity
             android:name=".MirageWebViewActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            android:theme="@style/TransparentTheme">
         </activity>
     </application>
 

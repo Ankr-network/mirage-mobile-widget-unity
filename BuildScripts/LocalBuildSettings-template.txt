@@ -1,0 +1,12 @@
+{
+	"AndroidProjectPath": "../Mirage-Android-WebView-Plugin",
+	"UnityProjectPath": "../Mirage-Widget",
+	"UnityPath": "C:/Program Files/Unity/Hub/Editor/2021.3.8f1/Editor/Unity.exe",
+	"KeystorePath": "C:/repos/Fuzzball-Fighters/FF.keystore",
+	"KeystorePassword": "",
+	"Alias": "ff",
+	"AliasPassword": "",
+	"ADBPath": "C:/Program Files/Unity/Hub/Editor/2021.3.8f1/Editor/Data/PlaybackEngines/AndroidPlayer/SDK/platform-tools/adb.exe",
+	"PackageName": "com.mirage.MirageWidget",
+    "DeletePreviousBuild": true
+}

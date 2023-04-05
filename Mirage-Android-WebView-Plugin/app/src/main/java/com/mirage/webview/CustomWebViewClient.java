@@ -1,4 +1,4 @@
-package com.mirage.miragewebviewandroidplugin;
+package com.mirage.webview;
 
 import android.graphics.Bitmap;
 import android.view.View;

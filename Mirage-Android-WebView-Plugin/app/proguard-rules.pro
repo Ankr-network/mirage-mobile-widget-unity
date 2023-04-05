@@ -20,7 +20,7 @@
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
 
--keep class com.mirage.miragewebviewandroidplugin.UnityBridge {*;}
--keep class com.mirage.miragewebviewandroidplugin.CustomJavaScriptInterface {*;}
--keep class com.mirage.miragewebviewandroidplugin.MirageWebViewActivity {*;}
--keep class com.mirage.miragewebviewandroidplugin.CustomWebViewClient {*;}
+-keep class com.mirage.webview.UnityBridge {*;}
+-keep class com.mirage.webview.CustomJavaScriptInterface {*;}
+-keep class com.mirage.webview.MirageWebViewActivity {*;}
+-keep class com.mirage.webview.CustomWebViewClient {*;}
