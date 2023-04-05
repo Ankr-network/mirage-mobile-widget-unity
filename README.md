@@ -1,7 +1,7 @@
 # Mirage Widget
 
 
-Mirage Widget allows game developers to use our Mirage-built services in their mobile dapps. Currently it is only implemented for Android.
+Mirage Widget allows game developers to use our Mirage-built services in their mobile dapps. Currently it is only implemented for Unity Android.
 
 ## Requirements
 
