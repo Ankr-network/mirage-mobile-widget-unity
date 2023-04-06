@@ -1,0 +1,6 @@
+{
+	"name": "MirageWidget.MirageAPI.Utils",
+	"references": [
+		"UniTask"
+	]
+}
