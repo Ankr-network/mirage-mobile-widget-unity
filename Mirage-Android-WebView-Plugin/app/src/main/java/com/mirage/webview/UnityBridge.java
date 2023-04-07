@@ -18,10 +18,9 @@ public class UnityBridge {
         return instance;
     }
 
-    public void showWebView(String clientId, String userToken) {
+    public void showWebView(String clientId) {
         Intent intent = new Intent(_context, MirageWebViewActivity.class);
         intent.putExtra("clientId", clientId);
-        intent.putExtra("userToken", userToken);
         _context.startActivity(intent);
     }
 

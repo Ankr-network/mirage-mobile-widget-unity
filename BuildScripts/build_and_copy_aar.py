@@ -12,7 +12,8 @@ def build_project(android_project_path, is_debug):
 
     os.chdir(android_project_path)
     subprocess.run([gradle_executable, "clean"])
-    subprocess.run([gradle_executable, "assembleRelease"])
+    build_type = "assembleDebug" if is_debug else "assembleRelease"
+    subprocess.run([gradle_executable, build_type])
     os.chdir("..")
 
 def copy_aar(android_project_path, unity_project_path, is_debug):
@@ -48,7 +49,7 @@ if __name__ == "__main__":
     unity_project_path = os.path.abspath(settings['UnityProjectPath'])
     
     # If debug folder exists in the plugin sources in this case we build debug
-    is_debug = os.path.exist(os.path.join(android_project_path, "app", "src", "debug"))
+    is_debug = os.path.exists(os.path.join(android_project_path, "app", "src", "debug"))
 
     build_project(android_project_path, is_debug)
     copy_aar(android_project_path, unity_project_path, is_debug)

@@ -5,7 +5,7 @@ To make a debug build for Mirage-Android-WebView-Plugin go to folder `Mirage-And
 ```
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="mirage_login_url">URL_TO_DEBUG_WEBVIEW_PAGE</string>
+    <string name="mirage_auth_url">URL_TO_DEBUG_WEBVIEW_PAGE</string>
 </resources>
 ```
 

@@ -9,7 +9,7 @@ namespace MirageWidget.MirageWebView.Android
 		private const string UnityBridgeClass = "com.mirage.webview.UnityBridge";
 		private const string CurrentActivityField = "currentActivity";
 		
-		void IMirageWebViewPlatformManager.ShowWebView(string clientId, string userToken)
+		void IMirageWebViewPlatformManager.ShowWebView(string clientId)
 		{
 			if (Application.platform == RuntimePlatform.Android)
 			{
@@ -29,8 +29,8 @@ namespace MirageWidget.MirageWebView.Android
 
 							var unityBridgeInstance = pluginClass.CallStatic<AndroidJavaObject>(getInstanceMethod, currentActivity);
 							
-							Debug.Log($"MirageWidgetExample:: MirageAndroidWebViewManager:: calling showWebView() with clientId={clientId} userToken={userToken}");
-							unityBridgeInstance.Call(showWebViewMethod, clientId, userToken);
+							Debug.Log($"MirageWidgetExample:: MirageAndroidWebViewManager:: calling showWebView() with clientId={clientId}");
+							unityBridgeInstance.Call(showWebViewMethod, clientId);
 						}
 					}
 				}

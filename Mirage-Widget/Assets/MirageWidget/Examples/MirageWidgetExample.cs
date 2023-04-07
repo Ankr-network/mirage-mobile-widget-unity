@@ -19,8 +19,7 @@ namespace MirageWidget.Examples
 			
 			//TODO ANTON finish this
 			var clientId = "";
-			var userToken = "";
-			_mirageWebViewManager.ShowWebView(clientId, userToken);
+			_mirageWebViewManager.ShowWebView(clientId);
 		}
 	}
 }
