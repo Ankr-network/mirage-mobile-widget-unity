@@ -79,7 +79,7 @@ public class MirageWebViewActivity extends Activity {
     {
         _webView.setWebViewClient(new CustomWebViewClient(_progressBar));
         _webView.getSettings().setJavaScriptEnabled(true);
-        _webView.addJavascriptInterface(new CustomJavaScriptInterface(this), "WebViewInterface");
+        _webView.addJavascriptInterface(new CustomJavaScriptInterface(this), "WebViewJSInterface");
     }
     
     private void openWebView()

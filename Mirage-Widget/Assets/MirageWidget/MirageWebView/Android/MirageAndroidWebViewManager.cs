@@ -43,16 +43,16 @@ namespace MirageWidget.MirageWebView.Android
 			{
 				switch (messageDto.MessageType)
 				{
-					case "login":
-						OnLoginDataReceived(messageDto.MessageData);
+					case "auth":
+						OnAuthDataReceived(messageDto.MessageData);
 						break;
 				}
 			}
 		}
 
-		private void OnLoginDataReceived(string loginData)
+		private void OnAuthDataReceived(string authData)
 		{
-			Debug.Log("Login data received: " + loginData);
+			Debug.Log("Auth data received: " + authData);
 			// Process login data as needed.
 		}
 	}
