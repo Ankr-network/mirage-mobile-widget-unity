@@ -17,7 +17,7 @@ namespace MirageWidget.Examples
 			_mirageWebViewManager = new MirageWebViewManager();
 			_messageBus.AddListener(_mirageWebViewManager);
 			
-			//TODO ANTON finish this
+			//TODO ANTON finish this in MC-129
 			var clientId = "";
 			_mirageWebViewManager.ShowWebView(clientId);
 		}
