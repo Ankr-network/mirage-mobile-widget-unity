@@ -21,11 +21,11 @@ Here's a description of each property in this config:
 | UnityPath | Absolute path to the Unity executable | "C:/Program Files/Unity/Hub/Editor/2021.3.8f1/Editor/Unity.exe" |
 | KeystorePath | Absolute path to the Android keystore file | "C:/repos/Fuzzball-Fighters/FF.keystore" |
 | KeystorePassword | Password for the Android keystore | "qwerty" |
-| Alias | Alias of the key within the keystore | | "some-alias" |
+| Alias | Alias of the key within the keystore | | "some_alias" |
 | AliasPassword | Password for the key alias | "qwerty" |
 | ADBPath | Absolute to the Android Debug Bridge (ADB) executable | "C:/Program Files/Unity/Hub/Editor/2021.3.8f1/Editor/Data/PlaybackEngines/AndroidPlayer/SDK/platform-tools/adb.exe" |
 | PackageName | The package name for the Unity project | "com.mirage.MirageWidget" |
-| DeletePreviousBuild | Whether to delete the previous build before creating a new one (true/false) | true |
+| DeletePreviousBuild | Whether to uninstall the previous build from a device before installing a new one (true/false) | true |
 
 
 Make sure to fill in the necessary values for KeystorePassword, AliasPassword, and any other fields needed for your specific configuration.
