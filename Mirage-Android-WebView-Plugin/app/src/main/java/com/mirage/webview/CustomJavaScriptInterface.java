@@ -10,7 +10,17 @@ public class CustomJavaScriptInterface {
     }
 
     @JavascriptInterface
-    public void onLoginDataReceived(String loginData) {
-        _webViewActivity.sendLoginDataToUnity(loginData);
+    public void sendAuthData(String authData) {
+        _webViewActivity.sendAuthDataToUnity(authData);
+    }
+    
+    @JavascriptInterface
+    public void sendMessage(String message) {
+        _webViewActivity.sendMessage(message);
+    }
+    
+    @JavascriptInterface
+    public void closeWebView() {
+        _webViewActivity.exitActivity();
     }
 }

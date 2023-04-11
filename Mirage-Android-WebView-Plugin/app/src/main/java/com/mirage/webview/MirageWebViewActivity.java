@@ -34,12 +34,20 @@ public class MirageWebViewActivity extends Activity {
         }
     }
 
-    public void sendLoginDataToUnity(String loginData) {
+    public void sendAuthDataToUnity(String authData) {
         HashMap<String, String> messageMap = new HashMap<>();
-        messageMap.put("message_type", "login");
-        messageMap.put("message_data", loginData);
+        messageMap.put("message_type", "auth");
+        messageMap.put("message_data", authData);
         JSONObject messageMapJson = new JSONObject(messageMap);
         UnityPlayer.UnitySendMessage("MirageMessageBus", "PushMessage", messageMapJson.toString());
+    }
+    
+    public void sendMessage(String message) {
+        UnityPlayer.UnitySendMessage("MirageMessageBus", "PushMessage", message);
+    }
+
+    public void exitActivity() {
+        finish();
     }
 
     @Override
@@ -48,7 +56,6 @@ public class MirageWebViewActivity extends Activity {
 
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         Window window = getWindow();
-        window.addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
         window.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         window.setDimAmount(0); //Making the window dim transparent
         window.addFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND);
@@ -59,20 +66,27 @@ public class MirageWebViewActivity extends Activity {
         _exitButton = findViewById(R.id.exit_button);
         _progressBar = findViewById(R.id.progress_bar);
         _relativeLayout = findViewById(R.id.webViewLayout);
-
-        _webView.setWebViewClient(new CustomWebViewClient(_progressBar));
-        _webView.getSettings().setJavaScriptEnabled(true);
-        _webView.addJavascriptInterface(new CustomJavaScriptInterface(this), "WebViewInterface");
-
-        Intent intent = getIntent();
-        String url = intent.getStringExtra("url");
-        _webView.loadUrl(url);
+        
         _relativeLayout.setBackgroundColor(Color.TRANSPARENT);
+        
+        customizeWebView();
+        openWebView();
 
         _exitButton.setOnClickListener(v -> exitActivity());
     }
-
-    private void exitActivity() {
-        finish();
+    
+    private void customizeWebView()
+    {
+        _webView.setWebViewClient(new CustomWebViewClient(_progressBar));
+        _webView.getSettings().setJavaScriptEnabled(true);
+        _webView.addJavascriptInterface(new CustomJavaScriptInterface(this), "WebViewJSInterface");
+    }
+    
+    private void openWebView()
+    {
+        Intent intent = getIntent();
+        String clientId = intent.getStringExtra("clientId"); //to be used in the URL later
+        String authUrl = getString(R.string.mirage_auth_url);
+        _webView.loadUrl(authUrl);
     }
 }

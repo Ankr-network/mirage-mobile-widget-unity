@@ -1,0 +1,17 @@
+{
+    "name": "MirageWidget.MirageAPI.SCM",
+    "rootNamespace": "",
+    "references": [
+        "UniTask",
+        "MirageWidget.MirageAPI.Utils"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

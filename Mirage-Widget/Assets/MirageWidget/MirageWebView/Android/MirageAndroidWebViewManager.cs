@@ -9,7 +9,7 @@ namespace MirageWidget.MirageWebView.Android
 		private const string UnityBridgeClass = "com.mirage.webview.UnityBridge";
 		private const string CurrentActivityField = "currentActivity";
 		
-		void IMirageWebViewPlatformManager.ShowWebView(string url)
+		void IMirageWebViewPlatformManager.ShowWebView(string clientId)
 		{
 			if (Application.platform == RuntimePlatform.Android)
 			{
@@ -29,8 +29,8 @@ namespace MirageWidget.MirageWebView.Android
 
 							var unityBridgeInstance = pluginClass.CallStatic<AndroidJavaObject>(getInstanceMethod, currentActivity);
 							
-							Debug.Log("MirageWidgetExample:: MirageAndroidWebViewManager:: calling showWebView() with url=" + url);
-							unityBridgeInstance.Call(showWebViewMethod, url);
+							Debug.Log($"MirageWidgetExample:: MirageAndroidWebViewManager:: calling showWebView() with clientId={clientId}");
+							unityBridgeInstance.Call(showWebViewMethod, clientId);
 						}
 					}
 				}
@@ -43,16 +43,16 @@ namespace MirageWidget.MirageWebView.Android
 			{
 				switch (messageDto.MessageType)
 				{
-					case "login":
-						OnLoginDataReceived(messageDto.MessageData);
+					case "auth":
+						OnAuthDataReceived(messageDto.MessageData);
 						break;
 				}
 			}
 		}
 
-		private void OnLoginDataReceived(string loginData)
+		private void OnAuthDataReceived(string authData)
 		{
-			Debug.Log("Login data received: " + loginData);
+			Debug.Log("Auth data received: " + authData);
 			// Process login data as needed.
 		}
 	}

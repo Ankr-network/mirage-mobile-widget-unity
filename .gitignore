@@ -16,6 +16,9 @@ Mirage-Android-WebView-Plugin/httpRequests/
 Mirage-Android-WebView-Plugin/dataSources/
 Mirage-Android-WebView-Plugin/dataSources.local.xml
 
+# debug folder is ignored in order to hide debug values from public access
+Mirage-Android-WebView-Plugin/app/src/debug/
+
 **/UserSettings/
 
 # This .gitignore file should be placed at the root of your Unity project directory
