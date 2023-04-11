@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/webViewLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent"
+    tools:context=".MirageWebViewActivity">
+
+    <WebView
+        android:id="@+id/webview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none"
+        android:layout_marginTop="@dimen/webview_margin_top_bottom"
+        android:layout_marginBottom="@dimen/webview_margin_top_bottom"
+        android:layout_marginStart="@dimen/webview_margin_left_right"
+        android:layout_marginEnd="@dimen/webview_margin_left_right" />
+
+    <ImageButton
+        android:id="@+id/exit_button"
+        android:contentDescription="@string/exit_button_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="@dimen/close_button_margin_top"
+        android:layout_marginRight="@dimen/close_button_margin_right"
+        android:padding="@dimen/close_button_padding"
+        android:background="@android:color/transparent"
+        android:src="@android:drawable/ic_menu_close_clear_cancel" />
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:layout_alignParentTop="true"
+        android:indeterminate="false" />
+
+</RelativeLayout>

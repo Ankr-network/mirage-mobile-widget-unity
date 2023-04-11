@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Mirage-Android-WebView-Plugin</string>
+    <string name="exit_button_description">Exit button</string>
+</resources>

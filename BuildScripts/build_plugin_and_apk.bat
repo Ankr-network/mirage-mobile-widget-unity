@@ -1,0 +1,3 @@
+python build_and_copy_aar.py
+python build_unity_android.py
+pause

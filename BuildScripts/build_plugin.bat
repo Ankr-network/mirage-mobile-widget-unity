@@ -1,0 +1,2 @@
+python build_and_copy_aar.py
+pause

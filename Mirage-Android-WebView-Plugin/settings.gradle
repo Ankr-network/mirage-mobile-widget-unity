@@ -1,0 +1,3 @@
+
+rootProject.name = "Mirage-Android-WebView-Plugin"
+include ':app'
