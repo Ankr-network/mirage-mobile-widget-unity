@@ -2,6 +2,6 @@
 {
 	public interface IMessageListener
 	{
-		public void PushMessage(string message);
+		void PushMessage(string message);
 	}
 }

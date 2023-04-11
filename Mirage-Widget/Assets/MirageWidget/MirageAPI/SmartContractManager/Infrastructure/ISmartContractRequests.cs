@@ -1,15 +1,15 @@
 using System.Collections.Generic;
+using Cysharp.Threading.Tasks;
 using MirageWidget.MirageAPI.SmartContractManager.Data.AllContracts;
 using MirageWidget.MirageAPI.SmartContractManager.Data.GetContract;
-using Cysharp.Threading.Tasks;
 
 namespace MirageWidget.MirageAPI.SmartContractManager.Infrastructure
 {
 	public interface ISmartContractRequests
 	{
-		public bool IsInitialized();
-		public void SetToken(string applicationToken);
-		public UniTask<GetContractResponseDTO> GetContractInfo(string contractId);
-		public UniTask<List<SCMContractIDPair>> GetAllContracts();
+		bool IsInitialized();
+		void SetToken(string applicationToken);
+		UniTask<GetContractResponseDTO> GetContractInfo(string contractId);
+		UniTask<List<SCMContractIDPair>> GetAllContracts();
 	}
 }
